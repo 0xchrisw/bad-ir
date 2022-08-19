@@ -87,18 +87,3 @@ class RokuRemote:
 
 remote = RokuRemote()
 remote.enable_developer_mode()
-
-
-#####
-## Roku IR Protocol
-####
-## NEC Remote Protocol
-# 32  |
-# 28  | Compliment
-# 24  |
-# 20  |
-# -----------------------
-# 16  |
-# 12  |
-#  8  | System Code
-#  4  |
