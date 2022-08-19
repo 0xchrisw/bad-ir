@@ -41,8 +41,6 @@ class RokuRemote:
 
 
   def code_to_string(self, command):
-    # TODO: build_command()
-    # flirc_util.exe sendir --ik=23000 --repeat=3 --pattern
     return ','.join([str(i) for i in command])
 
 
@@ -50,7 +48,13 @@ class RokuRemote:
     output = []
     for part in command:
       cmd = self.code_to_string(part)
-      flirc_command = f"{self.bin} sendir --pattern={cmd}"
+      flirc_command = " ".join([
+        self.bin,
+          f"sendir",
+          f"--ik=23000",
+          # f"--repeat=3",
+          f"--pattern={cmd}"
+      ])
       output.append(os.popen(flirc_command).read())
     return output
 
@@ -58,17 +62,17 @@ class RokuRemote:
   def enable_developer_mode(self, verbose=True):
     # TODO: RIGHT Key
     macro = [
-      "HOME", "HOME", "HOME",
-      "UP", "UP",
+      "HOME",  "HOME", "HOME",
+      "UP",    "UP",
       "RIGHT", "LEFT",
       "RIGHT", "LEFT",
       "RIGHT",
-      "SELECT",  # Enable & Restart
-      "UP",      # Security Warning
-      "SELECT",   # These are not the warnings you are looking for...
-      "SELECT",
-      "SELECT",
-      # Enter password here
+      # "SELECT",  # Enable & Restart
+      # "UP",      # Security Warning
+      # "SELECT",   # These are not the warnings you are looking for...
+      # "SELECT",
+      # "SELECT",
+      # # Enter password here
     ]
     for key in macro:
       _key = self.commands[key]
