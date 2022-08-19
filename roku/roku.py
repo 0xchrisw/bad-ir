@@ -55,7 +55,9 @@ class RokuRemote:
       "RIGHT", "LEFT",
       "RIGHT", "LEFT",
       "RIGHT",
-      "SELECT"
+      "SELECT",  # Enable & Restart
+      "UP",      # Security Warning
+      "SELECT"   # These are not the warnings you are looking for...
     ]
     for key in macro:
       self.send_command(self.commands[key])
@@ -63,3 +65,10 @@ class RokuRemote:
 
 remote = RokuRemote()
 remote.enable_developer_mode()
+
+
+# Build app
+# Enable developer mode
+# Set Password
+# Turn on AP
+# Locate device IP
