@@ -3,6 +3,7 @@
 
 import os
 import platform
+import time
 
 from pathlib import Path
 
@@ -48,7 +49,7 @@ class RokuRemote:
     return os.popen(flirc_command).read()
 
 
-  def enable_developer_mode(self):
+  def enable_developer_mode(self, verbose=True):
     macro = [
       "HOME", "HOME", "HOME",
       "UP", "UP",
@@ -57,10 +58,17 @@ class RokuRemote:
       "RIGHT",
       "SELECT",  # Enable & Restart
       "UP",      # Security Warning
-      "SELECT"   # These are not the warnings you are looking for...
+      "SELECT",   # These are not the warnings you are looking for...
+      "SELECT",
+      "SELECT",
+      # Enter password here
     ]
     for key in macro:
-      self.send_command(self.commands[key])
+      _key = self.commands[key]
+      if verbose:
+        print(f"Sending key: {key}")
+      self.send_command(_key)
+      time.sleep(0.75)
 
 
 remote = RokuRemote()
