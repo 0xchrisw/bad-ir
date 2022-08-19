@@ -1,7 +1,8 @@
-# Bad IR
+![](assets/background.png)
+
+# Bad IR - *Work in Progress*
 Keystroke Injection on Smart TVs
 
-*Work in Progress*
 
 ---
 
