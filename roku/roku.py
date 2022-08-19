@@ -34,7 +34,6 @@ class RokuRemote:
     }
 
     self.bin = flirc[platform.system().lower()]
-
     self.username = "rokudev"
     self.password = "rokudev"
 
@@ -57,18 +56,17 @@ class RokuRemote:
   def enable_developer_mode(self, verbose=True):
     # TODO: UP KEY
     macro = [
-      "UP", "UP", "UP"
-      # "HOME", "HOME", "HOME",
-      # "UP", "UP",
-      # "RIGHT", "LEFT",
-      # "RIGHT", "LEFT",
-      # "RIGHT",
-      # "SELECT",  # Enable & Restart
-      # "UP",      # Security Warning
-      # "SELECT",   # These are not the warnings you are looking for...
-      # "SELECT",
-      # "SELECT",
-      # # Enter password here
+      "HOME", "HOME", "HOME",
+      "UP", "UP",
+      "RIGHT", "LEFT",
+      "RIGHT", "LEFT",
+      "RIGHT",
+      "SELECT",  # Enable & Restart
+      "UP",      # Security Warning
+      "SELECT",   # These are not the warnings you are looking for...
+      "SELECT",
+      "SELECT",
+      # Enter password here
     ]
     for key in macro:
       _key = self.commands[key]
