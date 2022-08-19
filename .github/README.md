@@ -1,7 +1,8 @@
-![](assets/background.png)
-
 # Bad IR - *Work in Progress*
 Keystroke Injection on Smart TVs
+
+![](assets/background.png)
+
 
 
 ---
