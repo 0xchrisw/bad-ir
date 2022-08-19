@@ -54,7 +54,7 @@ class RokuRemote:
       "UP", "UP",
       "RIGHT", "LEFT",
       "RIGHT", "LEFT",
-      "RIGHT"
+      "RIGHT",
       "SELECT"
     ]
     for key in macro:
