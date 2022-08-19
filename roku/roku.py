@@ -29,8 +29,11 @@ class RokuRemote:
     flirc = {
       'darwin': str(Path(project_dir / "bin/darwin/flirc_util")),
     }
+
     self.bin = flirc[platform.system().lower()]
-    print(self.bin)
+
+    self.username = "rokudev"
+    self.password = "rokudev"
 
 
   def code_to_string(self, command):
