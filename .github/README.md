@@ -32,5 +32,5 @@ The goal of this project is to execute untrusted code on a Smart TV. Using a com
 
 ### Roku
   - https://developer.roku.com/en-gb/docs/developer-program/getting-started/developer-setup.md
-  - https://github.com/rokudev/hello-world
+  - https://github.com/rokudev/samples
 
